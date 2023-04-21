@@ -22,7 +22,6 @@ public class CourseEntity {
 	
 	
 	@ManyToMany(mappedBy = "courseEntity")
-	
 	Set<StudentsEntity> studentsEntity;
 	
 	
