@@ -22,12 +22,12 @@ public class StudentsController {
 	@Autowired
 	StudentsRepository studentsRepository;
 	
-//	@Autowired
-//	CourseRepository courseRepository;
+	@Autowired
+	CourseRepository courseRepository;
 	
 	@PostMapping("/studentadd")
 	public StudentsEntity addStudents(@RequestBody StudentsEntity student) {
-		//courseRepository.save(student.getCourseEntity());
+		courseRepository.save(student.getCourseEntity());
 		studentsRepository.save(student);
 		return student;
 	}

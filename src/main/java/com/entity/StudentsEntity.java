@@ -16,7 +16,7 @@ public class StudentsEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer sid;
 	private String studentname;
 	private String studentlastname;
 	private String studentemail;
@@ -24,7 +24,7 @@ public class StudentsEntity {
 	private String studentaddress;
 	
 	@ManyToMany
-	@JoinColumn(name = "cId" , referencedColumnName = "id")
+	@JoinColumn(name = "cid" , referencedColumnName = "cid")
 	Set<CourseEntity> courseEntity;
 	
 	
@@ -36,10 +36,10 @@ public class StudentsEntity {
 		this.courseEntity = courseEntity;
 	}
 	public Integer getId() {
-		return id;
+		return sid;
 	}
 	public void setId(Integer id) {
-		this.id = id;
+		this.sid = id;
 	}
 	public String getStudentname() {
 		return studentname;

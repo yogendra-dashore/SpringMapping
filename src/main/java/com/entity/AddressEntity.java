@@ -7,18 +7,21 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name ="address_info")
 public class AddressEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer aid;
 	private String cityname;
 	private String districtname;
 	private String statename;
 	private String pincode;
 
+	@JsonIgnore
 	@OneToOne(mappedBy = "address")
 	PersonEntity personEntity;
 	
@@ -28,14 +31,15 @@ public class AddressEntity {
 	public void setPersonEntity(PersonEntity personEntity) {
 		this.personEntity = personEntity;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getCityname() {
 		return cityname;
+	}
+	public Integer getAid() {
+		return aid;
+	}
+	public void setAid(Integer aid) {
+		this.aid = aid;
 	}
 	public void setCityname(String cityname) {
 		this.cityname = cityname;

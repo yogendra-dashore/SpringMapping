@@ -56,7 +56,7 @@ public class EmployeeController {
 		return emp;
 	}
 	
-	@PutMapping("/updateByEmp")
+	@PutMapping("/updateByEmp")//null inserted
 	public EmployeeEntity updateEmployee(@RequestBody EmployeeEntity emp) {
 		employeeRepository.save(emp);
 		return emp;

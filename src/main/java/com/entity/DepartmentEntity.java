@@ -9,15 +9,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="department_info")
 public class DepartmentEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer Did;
 	private String depname;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "departmentEntity")
 	Set<EmployeeEntity> employeeEntity;
 	
@@ -28,10 +31,10 @@ public class DepartmentEntity {
 		this.employeeEntity = employeeEntity;
 	}
 	public Integer getId() {
-		return id;
+		return Did;
 	}
 	public void setId(Integer id) {
-		this.id = id;
+		this.Did = id;
 	}
 	public String getDepname() {
 		return depname;

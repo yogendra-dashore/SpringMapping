@@ -33,13 +33,13 @@ public class PersonController {
 		return personEntity;
 	}
 	
-	@GetMapping("/getPersonList")// not work
+	@GetMapping("/getPersonList")
 	public List<PersonEntity> getAllPerson() {
 		
 		return personRepo.findAll();
 	}
 	
-	@GetMapping("/getAllPersonById/{Id}")//not work
+	@GetMapping("/getAllPersonByid/{Id}")
 	public PersonEntity getPersonById(@PathVariable("Id") Integer Id) {
 		Optional<PersonEntity> personEntity = personRepo.findById(Id);
 		if(personEntity.isEmpty()) {

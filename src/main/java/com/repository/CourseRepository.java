@@ -1,6 +1,7 @@
 package com.repository;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -11,5 +12,7 @@ import com.entity.CourseEntity;
 public interface CourseRepository extends CrudRepository<CourseEntity, Integer>{
 
 	List<CourseEntity> findAll();
+
+	void save(Set<CourseEntity> courseEntity);
 
 }

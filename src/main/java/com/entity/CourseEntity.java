@@ -11,16 +11,18 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name ="course_info")
 public class CourseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer cid;
 	private String coursename;
 	
-	
+	@JsonIgnore
 	@ManyToMany(mappedBy = "courseEntity")
 	Set<StudentsEntity> studentsEntity;
 	
@@ -32,10 +34,10 @@ public class CourseEntity {
 		this.studentsEntity = studentsEntity;
 	}
 	public Integer getId() {
-		return id;
+		return cid;
 	}
 	public void setId(Integer id) {
-		this.id = id;
+		this.cid = id;
 	}
 	public String getCoursename() {
 		return coursename;

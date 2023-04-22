@@ -14,13 +14,19 @@ public class PersonEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer pid;
 	private String firstname;
 	private String lastname;
+	public Integer getPid() {
+		return pid;
+	}
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
 	private String mobno;
 	
 	@OneToOne
-	@JoinColumn(name = "addId",referencedColumnName = "id")
+	@JoinColumn(name = "aid",referencedColumnName = "aid")
 	AddressEntity address;
 	
 	
@@ -30,12 +36,7 @@ public class PersonEntity {
 	public void setAddress(AddressEntity address) {
 		this.address = address;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getFirstname() {
 		return firstname;
 	}

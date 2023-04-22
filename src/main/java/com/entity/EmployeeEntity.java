@@ -14,13 +14,13 @@ public class EmployeeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer Eid;
 	private String empname;
 	private String empemail;
 	private String empsalary;
 	
 	@ManyToOne
-	@JoinColumn(name = "Dept_id" , referencedColumnName = "id")
+	@JoinColumn(name = "Did" , referencedColumnName = "Did")
 	DepartmentEntity departmentEntity;
 	
 	public DepartmentEntity getDepartmentEntity() {
@@ -30,10 +30,10 @@ public class EmployeeEntity {
 		this.departmentEntity = departmentEntity;
 	}
 	public Integer getId() {
-		return id;
+		return Eid;
 	}
 	public void setId(Integer id) {
-		this.id = id;
+		this.Eid = id;
 	}
 	public String getEmpname() {
 		return empname;
