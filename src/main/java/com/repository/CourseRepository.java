@@ -13,6 +13,6 @@ public interface CourseRepository extends CrudRepository<CourseEntity, Integer>{
 
 	List<CourseEntity> findAll();
 
-	void save(Set<CourseEntity> courseEntity);
+//	void save(Set<CourseEntity> courseEntity);
 
 }

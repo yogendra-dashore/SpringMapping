@@ -2,6 +2,7 @@ package com.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,7 @@ public class StudentsEntity {
 	private String studentmobno;
 	private String studentaddress;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "cid" , referencedColumnName = "cid")
 	Set<CourseEntity> courseEntity;
 	

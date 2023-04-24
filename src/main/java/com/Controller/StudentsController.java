@@ -27,7 +27,7 @@ public class StudentsController {
 	
 	@PostMapping("/studentadd")
 	public StudentsEntity addStudents(@RequestBody StudentsEntity student) {
-		courseRepository.save(student.getCourseEntity());
+		//courseRepository.save(student.getCourseEntity());
 		studentsRepository.save(student);
 		return student;
 	}
